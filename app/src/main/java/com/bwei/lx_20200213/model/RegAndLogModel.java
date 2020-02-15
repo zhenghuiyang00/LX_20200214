@@ -21,6 +21,7 @@ public class RegAndLogModel implements IRegAndLogContract.IModel {
     public void register(String phone, String pwd, IModelCallBack iModelCallBack) {
         NetUtil.getInstance()
                 .getApi()
+                //注册
                 .register(phone,pwd)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -61,6 +62,7 @@ public class RegAndLogModel implements IRegAndLogContract.IModel {
     public void login(String phone, String pwd, IModelCallBack iModelCallBack) {
         NetUtil.getInstance()
                 .getApi()
+                //登录
                 .login(phone,pwd)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
